@@ -1,0 +1,96 @@
+@import "./normalize.scss";
+@import "./variables.scss";
+@import "./mixins.scss";
+
+html {
+  @include adaptive-font-html;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  padding: 0 10rem;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: $black;
+}
+
+.main {
+  background-color: $main-green;
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  grid-template-rows: 80rem min-content minmax(500rem, 1fr);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10rem;
+
+  margin-bottom: 18rem;
+  &__logo {
+    text-decoration: none;
+    &__img {
+      width: 250rem;
+      height: 50rem;
+    }
+  }
+}
+
+.orderButton {
+  display: block;
+  text-decoration: none;
+
+  width: 100%;
+  padding: 10rem 0 10rem 0;
+
+  background: $second-green;
+
+  text-align: center;
+  font-size: 16rem;
+
+  border: 0.5rem solid $second-gray;
+  border-radius: 4px;
+
+  color: $black;
+
+  margin-bottom: 30rem;
+}
+
+.contentlist {
+  background: $gray;
+  padding: 10rem;
+  border-radius: 4px;
+
+  overflow-y: auto;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 15rem 0;
+
+    text-decoration: none;
+
+    &__img {
+      width: 50rem;
+      height: 50rem;
+      margin-right: 10rem;
+    }
+
+    &__info {
+      &__name {
+        margin: 0;
+        font-size: 18rem;
+        color: $black;
+      }
+    }
+  }
+}

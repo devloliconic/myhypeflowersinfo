@@ -1,0 +1,25 @@
+@import "./variables.scss";
+
+@mixin adaptive($size) {
+  @if $size == desktop {
+    @media (min-width: #{$maxMobileWidth + 1}px) {
+      @content;
+    }
+  } @else if $size == mobile {
+    @media (max-width: #{$maxMobileWidth}px) {
+      @content;
+    }
+  }
+}
+
+@mixin adaptive-font-html() {
+  /* Desktop */
+  @include adaptive(desktop) {
+    font-size: calc(100vw / #{$maxDesktopWidth});
+  }
+
+  /* Mobile */
+  @include adaptive(mobile) {
+    font-size: calc(100vw / #{$minMobileWidth});
+  }
+}
